@@ -78,9 +78,10 @@ function checkBtnListener(){
         }else{
             let c = +cash;
             cash = c;
-            if(cash === 0){
-                updateMessage("Cash amount cannot be empty, must be a number.")
-            }else if(isNaN(cash)){
+//             if(cash === 0){
+//                 updateMessage("Cash amount cannot be empty, must be a number.")
+//             }else 
+            if(isNaN(cash)){
                 updateMessage("Cash amount cannot be words, must be a number.");
             }else{
                 updateMessage("Cash provided must be atleast equal to bill amount.")
