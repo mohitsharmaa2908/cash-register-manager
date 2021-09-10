@@ -20,7 +20,7 @@ h1{
     text-align: center;
 }
 
-.description{
+p,.description{
     width: 80%;
     font-size: larger;
     margin:0;
