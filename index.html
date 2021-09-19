@@ -23,14 +23,14 @@
 
                 <div>                    
                 <label for="bill-amount">Bill Amount:</label>
-                <input type="text"  id="bill-amount">
+                <input type="number" min="1"  id="bill-amount" name="Bill">
                 <button type="button" id="next">Next</button>
                 </div>
 
                 <div>
                     <label for="cash-given" id="cash-label">Cash Given:</label>
-                    <input type="text"  id="cash-given">
-                    <button type="submit" id="check">Check</button>
+                    <input type="number" min="1"  id="cash-given" name="Cash">
+                    <button type="submit" id="check">Check Cash</button>
                 </div>
 
                 <p id="message"></p>

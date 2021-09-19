@@ -66,42 +66,78 @@ function checkBtnListener(){
 
     let bill = Number(billAmount.value);
     
+
     if(cashGiven.style.display === "block"){
-        let cash = cashGiven.value;
+        let cash = Number(cashGiven.value);
         console.log({bill},{cash});
 
-        if(cash>=bill){
-            cash = Number(cash);
-            let amtToBeReturned = cash - bill;
-            hideMessage();
-            calculateChange(amtToBeReturned);
-        }else{
-            if(cash === ""){
-                updateMessage("Cash amount cannot be empty, must be a number.")
-            }else if(!Number.isInteger(cash) && cash !== "0"){
-                updateMessage("Cash amount cannot be words, must be a number.");
+        if(checkAmount(cashGiven)){
+            if(cash>=bill){
+                let amtToBeReturned = cash - bill;
+                hideMessage();
+                if(checkAmount(billAmount)){
+                    calculateChange(amtToBeReturned);
+                }else{
+                    toggleNotesTable("none");
+                }
             }else{
-                updateMessage("Cash provided must be atleast equal to bill amount.")
+                updateMessage("Cash provided must be atleast equal to bill amount.");
+                toggleNotesTable("none");
             }
+        }else{
+            toggleNotesTable("none");
         }
     }
 
 }
 
+function isFloat(value){
+    let n = value;
+    let res = n % 1 !== 0; //Number(n) === n &&
+    if(!res){
+        return false;
+    }
+    return true;
+}
+
+function checkAmount(amount){
+    console.log("1");
+    let value = Number(amount.value);
+    console.log({value});
+    if(value === 0){
+        updateMessage(amount.name+" amount cannot be zero or any other value.");
+        return false;
+    }else if(value < 0){
+        updateMessage(amount.name+" amount cannot be negative number.");
+        return false;
+    }else if(isFloat(value)){
+        updateMessage(amount.name+" amount cannot be floating-point number.");
+        return false;
+    }else if(value === ""){
+        updateMessage(amount.name+" amount cannot be empty, must be a number.");
+        return false;
+    }else if(!Number.isInteger(value) && value !== "0"){
+        updateMessage(amount.name+" amount cannot be words, must be a number.");
+        return false;
+    }
+
+    return true;
+}
+
 function nextBtnListener(){
     hideMessage();
-    let bill = billAmount.value;
-    if(bill > 0){
+    if(checkAmount(billAmount)){
         toggleCashSection("block");
+        // nextBtn.innerText = "Check Bill";
+        toogleNextBtn("none");
     }else{
-        if(bill === ""){
-            updateMessage("Bill amount cannot be empty, must be a number.")
-        }else if(!Number.isInteger(bill) && bill !== "0"){
-            updateMessage("Bill amount cannot be words, must be a number.");
-        }else{
-            updateMessage("Bill amount must be greater than zero.")
-        }
+        toggleNotesTable("none");
     }
+
+}
+
+function toogleNextBtn(value){
+    nextBtn.style.display = value;
 }
 
 toggleCashSection("none");
