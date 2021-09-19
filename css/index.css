@@ -78,3 +78,6 @@ caption{
     margin: .5rem auto;
 }
 
+#message{
+    text-align: center;
+}
