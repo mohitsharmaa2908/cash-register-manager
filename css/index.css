@@ -13,7 +13,6 @@ body{
     display: flex;
     flex-direction: column; 
     margin:2rem auto;
-    /* border: 1px solid red; */
 }
 
 h1{
@@ -25,7 +24,6 @@ p,.description{
     font-size: larger;
     margin:0;
     margin:auto;
-    /* text-align: center; */
 }
 
 div{
@@ -33,6 +31,7 @@ div{
     display: flex;
     flex-direction: column; 
     margin:auto;
+    margin-top: 1rem;
 }
 
 label{
@@ -46,19 +45,21 @@ input{
     width:70%;
     margin:auto;
     margin-bottom: .5rem;
-    border:2px solid black;
+    border:3px solid black;
 }
 
 button{
-    width:40%;
+    width:50%;
     border-radius: 5px;
     margin:auto;
-    border:2px solid black;
+    border:3px solid black;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: medium;
 }
 
 table{
-    /* border:1px solid red; */
-    width:55%;
+    width:50%;
     margin:auto;
     table-layout: fixed;
     border-collapse: collapse;
@@ -80,4 +81,141 @@ caption{
 
 #message{
     text-align: center;
+}
+
+
+@media (max-width:1200px){
+    .container-centered{
+        width: 50%;
+        margin: auto;
+    }
+
+    table{
+        width: 75%;
+    }
+
+
+    p,.description{
+        width: 60%;
+    }
+
+    div{
+        width: 80%;
+        margin-top: 1rem;
+    }
+    
+    button{
+        width:40%;
+        font-weight: bold;
+        font-size: medium;
+    }
+}
+
+@media (max-width:992px){
+
+    .container-centered{
+        width: 60%;
+        margin: auto;
+    }
+
+    table{
+        width: 70%;
+    }
+
+
+    p,.description{
+        width: 60%;
+    }
+
+    div{
+        width: 80%;
+        margin-top: 1rem;
+    }
+    
+    button{
+        width:40%;
+        font-weight: bold;
+        font-size: medium;
+    }
+    
+}
+
+@media (max-width:768px){
+
+    .container-centered{
+        width: 80%;
+        margin: auto;
+    }
+
+    table{
+        width: 66%;
+    }
+
+
+    p,.description{
+        width: 60%;
+    }
+
+    div{
+        width: 80%;
+        margin-top: 1rem;
+    }
+    
+    button{
+        width:40%;
+        font-weight: bold;
+        font-size: medium;
+    }
+    
+}
+
+@media (max-width:576px){
+    .container-centered{
+        width: 80%;
+        margin: auto;
+    }
+
+    p,.description{
+        width: 80%;
+    }
+
+    div{
+        width: 80%;
+        margin-top: 1rem;
+    }
+    
+    button{
+        width:50%;
+        font-size: medium;
+    }
+
+    table{
+        width:60%;
+    }
+    
+    th,td{
+        border:2px solid rgba(27, 27, 27, 0.87);
+        padding:.1rem;
+        font-weight: bolder;
+    }
+    
+    caption{
+        display: none;
+    }
+
+    tbody{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    tr{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-right: .2rem;
+    }
+
+    th,td{
+        flex: 1;
+    }
 }
