@@ -30,6 +30,7 @@
 <br>
 
 > **Screenshots:**
+
 ![App home page ](https://github.com/shmbajaj/cash-register-manager/blob/main/screenshots/home.png?raw=true)
 ![User entered bill amount and clicked on next button](https://github.com/shmbajaj/cash-register-manager/blob/main/screenshots/io_bill.png?raw=true)
 ![User eneterd cash given anc clicke on check cash button](https://github.com/shmbajaj/cash-register-manager/blob/main/screenshots/io_cash.png?raw=true)
